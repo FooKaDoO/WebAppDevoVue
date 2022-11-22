@@ -1,71 +1,36 @@
 import { createStore } from 'vuex'
 
-const posts = {
-  state: () => ({
-    PIDs: [0, 1, 2],
-    UIDs: [1, 0, 2],
-    texts: ["Tervist", "Shashmalone", "Mango"],
-    images: ["@/assets/logo.png", "@/assets/logo.png", "@/assets/logo.png"],
-    likes: [1, 2, 3]
-  }),
-  getters: {
-    getPIDs() {
-      return PIDs
-    },
-    getUID(PID) {
-      return UIDs[PID]
-    },
-    getText(PID) {
-      return texts[PID]
-    },
-    getImage(PID) {
-      return images[PID]
-    },
-    getLikes(PID) {
-      return likes[PID]
-    }
-  },
-  mutations: {
-    like (PID) {
-      postLikes[PID]++
-    },
-    unlike (PID) {
-      postLikes[PID]--
-    },
-    resetLikes() {
-      for (let i = 0; i < postLikes.length; i++) {
-        postLikes[i] = 0
-      }
-    }
-  }
-}
-
-const users = {
-  state: () => ({
-    names: ["Vello", "Jeekvim", "Poro"],
-    images: ["logo.png", "logo.png", "logo.png"]
-  }),
-  getters : {
-    getName(UID) {
-      return names[UID]
-    },
-    getImage(UID) {
-      return images[UID]
-    }
-  }
-}
-
 export default createStore({
   state: {
+    posts: [
+      {PID: 0, UID: 1, message: "Noku", image: "@/assets/logo.png", likes: 5},
+      {PID: 1, UID: 1, message: "Noku", image: "@/assets/logo.png", likes: 5},
+      {PID: 2, UID: 1, message: "Noku", image: "@/assets/logo.png", likes: 5}
+    ],
+    users: new Map([
+      [0, {UID: 0, userName: "Jeekvim", pfp:"@/assets/logo.png"}],
+      [1, {UID: 1, userName: "Hasbullah", pfp:"@/assets/logo.png"}],
+      [2, {UID: 2, userName: "Post Malone", pfp:"@/assets/logo.png"}]
+    ])
   },
   getters: {
+    getPosts: state => {
+      var getPosts = state.posts.map(post => {
+          return {
+          //name: state.users.get(post.UID).userName,
+          //pfp: state.users.get(post.UID).pfp,
+          message: post.message,
+          image: post.image,
+          likes: post.likes
+        }
+      });
+      return getPosts
+    }
   },
   mutations: {
   },
   actions: {
   },
   modules: {
-    users: users,
-    posts: posts
   }
 })

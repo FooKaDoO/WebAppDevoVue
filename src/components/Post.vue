@@ -1,7 +1,10 @@
 <template>
-  <div class="hello">
-    <h1>store.posts.getText(PID)</h1>
-    <img :src="store.posts.getImage(PID)" >
+  <div class="Post">
+    <h1>{{name}}</h1>
+    <img :src="pfp" >
+    <p>{{message}}</p>
+    <img :src="image" >
+    <p>{{likes}}</p>
   </div>
 </template>
 
@@ -9,7 +12,11 @@
 export default {
   name: 'Post',
   props: {
-    PID: Number
+    name: String,
+    pfp: String,
+    message: String,
+    image: String,
+    likes: Number
   }
 }
 </script>

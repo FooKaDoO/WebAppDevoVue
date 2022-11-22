@@ -1,25 +1,25 @@
 <template>
-  <div v-for="PID in store.posts.getPIDs()">
-    <post :PID="PID" :image="store.posts.getImage(PID)" />
-  </div>
+  <li v-for="post in posts">
+    <Post v-bind="post" />
+  </li>
 </template>
 
 <script>
-// @ is an alias to /src
+// @ is an alias to /srcs
 import Post from '@/components/Post.vue'
-import store from '@/store/index.js'
 
 export default {
   name: 'HomeView',
   components: {
     Post
   },
-  data: () => ({
-    items: [
-        { title: 'Chat', icon: require('@/assets/logo.png') },
-        { title: 'Vue',  icon: require('@/assets/logo.png') },
-        { title: 'Notification', icon: require('@/assets/logo.png') },
-      ],
-  })
+  data: function() {
+    return {}
+  },
+  computed: {
+    posts() {
+      return this.$store.getters.getPosts
+    }
+  }
 }
 </script>
