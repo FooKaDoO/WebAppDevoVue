@@ -3,9 +3,9 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     posts: [
-      {PID: 0, UID: 1, message: "Noku", image: "/assets/postImages/logo.png", likes: 5},
-      {PID: 1, UID: 1, message: "Noku", image: "/assets/postImages/logo.png", likes: 5},
-      {PID: 2, UID: 1, message: "Noku", image: "/assets/postImages/logo.png", likes: 5}
+      {PID: 0, UID: 1, message: "Noku", image: "/assets/postImages/logo.png", likes: 5, date:"2021-01-01"},
+      {PID: 1, UID: 1, message: "Noku", image: "/assets/postImages/logo.png", likes: 5, date:"2021-01-01"},
+      {PID: 2, UID: 1, message: "Noku", image: "/assets/postImages/logo.png", likes: 5, date:"2021-01-01"}
     ],
     users: new Map([
       [0, {UID: 0, userName: "Jeekvim", pfp:"/assets/userImages/logo.png"}],
@@ -21,7 +21,8 @@ export default createStore({
           pfp: state.users.get(post.UID).pfp,
           message: post.message,
           image: post.image,
-          likes: post.likes
+          likes: post.likes,
+          date: post.date
         }
       });
       return getPosts
