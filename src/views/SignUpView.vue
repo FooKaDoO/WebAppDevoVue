@@ -9,7 +9,7 @@
       </ul>
     </p>
     <form>
-      <input type="text" id="email" name="email" placeholder="Your email.." required>
+      <input type="text" id="email" name="email" placeholder="Your email.." v-model="name" required>
       <br>
       <input type="text" id="password" name="Password" placeholder="Your password.." v-model="password" required>
       <br>
