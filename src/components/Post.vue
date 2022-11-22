@@ -1,11 +1,13 @@
 <template>
   <div class="Post">
-    <img :src="pfp" >
-    <h4>{{name}}</h4>
-    <h4>{{date}}</h4>
-    <p>{{message}}</p>
-    <img :src="image" >
-    <p>{{likes}}</p>
+    <img id="pfp" :src="pfp" >
+    <h4 id="nimi">{{name}}</h4>
+    <h4 id="date">{{date}}</h4>
+    <br>
+    <img id="image" :src="image" >
+    <br>
+    <p id="text">{{message}}</p>
+    <p id="likes">{{likes}}</p>
   </div>
 </template>
 
@@ -25,18 +27,31 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h4 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
+
+div{
   display: inline-block;
-  margin: 0 10px;
+  width:30vw;
+  background-color:gray;
+  border-radius:5px;
+  margin:1%;
+  white-space: nowrap;
 }
-a {
-  color: #42b983;
+#nimi{
+  text-align: left;
+}
+#pfp{
+  text-align: left;
+  height:5vw;
+  width:5vw;
+}
+#date{
+  text-align: right;
+
+}
+#image{
+  display:inline;
+}
+#text{
+  text-align: left;
 }
 </style>
