@@ -8,11 +8,13 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import SignUpViewVue from './views/SignUpView.vue';
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
+    SignUpViewVue
   }
 }
 </script>
