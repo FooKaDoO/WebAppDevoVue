@@ -1,3 +1,4 @@
+import { VueElement } from 'vue'
 import { createStore } from 'vuex'
 
 export default createStore({
@@ -38,10 +39,9 @@ export default createStore({
       state.posts.get(PID).likes++
     },
     resetLikes (state) {
-      state.posts.values(post => {
+      state.posts.forEach((post, key) =>{
         post.likes = 0
-      }
-      )
+      })
     }
   },
   actions: {
