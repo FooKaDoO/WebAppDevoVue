@@ -8,7 +8,6 @@
 <script>
 // @ is an alias to /srcs
 import Post from '@/components/Post.vue'
-import { ref } from 'vue'
 
 export default {
   name: 'HomeView',

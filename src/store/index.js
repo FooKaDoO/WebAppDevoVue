@@ -15,8 +15,9 @@ export default createStore({
   },
   getters: {
     getPosts: state => {
-      var getPosts = state.posts.values(post => {
-          return {
+      var getPosts = []
+      state.posts.forEach((post, key) => {
+        getPosts.push({
           PID: post.PID,
           UID: post.UID,
           name: state.users.get(post.UID).userName,
@@ -24,9 +25,11 @@ export default createStore({
           message: post.message,
           image: post.image,
           likes: post.likes,
-          date: post.date
-        }
-      });
+          date: post.date,
+          joe: state.users
+        })
+      }
+      )
       return getPosts
     }
   },

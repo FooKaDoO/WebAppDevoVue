@@ -1,20 +1,18 @@
 <template>
   <div class="Post">
-    <img id="pfp" :src="pfp" >
+    <img id="profilePic" :src="pfp" >
     <h4 id="nimi">{{name}}</h4>
-    <h4 id="date">{{date}}</h4>
+    <h4 id="kuup">{{date}}</h4>
     <br>
-    <img id="image" :src="image" >
+    <img id="pilt" :src="image" >
     <br>
-    <p id="text">{{message}}</p>
-    <p id="likes">{{likes}}</p>
+    <p id="tekst">{{message}}</p>
+    <p id="laigid">{{likes}}</p>
     <button v-on:click="like">Like</button>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
   name: 'Post',
   props: {
@@ -49,19 +47,19 @@ div{
 #nimi{
   text-align: left;
 }
-#pfp{
+#profilePic{
   text-align: left;
   height:5vw;
   width:5vw;
 }
-#date{
+#kuup{
   text-align: right;
 
 }
-#image{
+#pilt{
   display:inline;
 }
-#text{
+#tekst{
   text-align: left;
 }
 </style>
