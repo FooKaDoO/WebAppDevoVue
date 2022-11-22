@@ -15,12 +15,14 @@
 export default {
   name: 'Post',
   props: {
+    PID: Number,
+    UID: Number,
     name: String,
     pfp: String,
     message: String,
     image: String,
     likes: Number,
-    date: Date
+    date: String
   }
 }
 </script>
