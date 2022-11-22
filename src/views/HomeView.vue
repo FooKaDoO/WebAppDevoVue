@@ -1,12 +1,13 @@
 <template>
-  <div v-for="item in items">
-    <post :msg="item.title" :picture = "item.icon" UID="fuck"/>
+  <div v-for="PID in store.posts.getPIDs()">
+    <post :PID="PID" :image="store.posts.getImage(PID)" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Post from '@/components/Post.vue'
+import store from '@/store/index.js'
 
 export default {
   name: 'HomeView',
