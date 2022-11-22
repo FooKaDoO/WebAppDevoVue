@@ -42,8 +42,8 @@ export default {
   display:flex;
   background-color:gray;
   width: 35vw;
-  margin-right:30vw;
-  margin-left:30vw;
+  margin-right:32.5%;
+  margin-left:32.5%;
   border-radius: 5px;
 }
 .flex1{
@@ -65,8 +65,8 @@ export default {
   flex:1;
 }
 #pilt{
-  max-height:15vw;
-  max-width:15vw;
+  height:15vw;
+  width:15vw;
   flex:1;
   text-align: left;
 }
@@ -81,8 +81,12 @@ export default {
 }
 
 button{
-  width: 5%;
+  min-width:40px;
+  width: 5vw;
   flex:1;
   border-radius: 5px;
+}
+button:hover{
+  background-color:darkgray;
 }
 </style>
