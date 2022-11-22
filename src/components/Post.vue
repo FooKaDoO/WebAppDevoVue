@@ -8,6 +8,7 @@
     <br>
     <p id="text">{{message}}</p>
     <p id="likes">{{likes}}</p>
+    <form><input type="button" value="Y"></form>
   </div>
 </template>
 
