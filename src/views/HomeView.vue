@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <Post msg="Welcome to Your Vue.js App"/>
+  <div v-for="item in items">
+    <post :msg="item.title" :picture = "item.icon" UID="fuck"/>
   </div>
 </template>
 
@@ -13,6 +12,13 @@ export default {
   name: 'HomeView',
   components: {
     Post
-  }
+  },
+  data: () => ({
+    items: [
+        { title: 'Chat', icon: require('@/assets/logo.png') },
+        { title: 'Vue',  icon: require('@/assets/logo.png') },
+        { title: 'Notification', icon: require('@/assets/logo.png') },
+      ],
+  })
 }
 </script>
