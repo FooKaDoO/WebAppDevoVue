@@ -2,12 +2,13 @@
   <ul v-for="post in posts">
     <Post v-bind="post" :key="post.PID"/>
   </ul>
-  <form v-action="resetLikes"><input type="button" value="reset likes"></form>
+  <button v-on:click="resetLikes">Reset Likes</button>
 </template>
 
 <script>
 // @ is an alias to /srcs
 import Post from '@/components/Post.vue'
+import { ref } from 'vue'
 
 export default {
   name: 'HomeView',
@@ -24,10 +25,7 @@ export default {
   },
   methods: {
     resetLikes: function() {
-      this.$store.mutations.commit('resetLikes')
-      this.$vnode.key += 1
-      this.$vnode.key -= 1
-      //this.$forceUpdate()
+      this.$store.commit('resetLikes')
     }
   }
 }

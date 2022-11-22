@@ -8,7 +8,7 @@
     <br>
     <p id="text">{{message}}</p>
     <p id="likes">{{likes}}</p>
-    <form v-action="like,PID"><input type="button" value="Y"></form>
+    <button v-on:click="like">Like</button>
   </div>
 </template>
 
@@ -28,11 +28,8 @@ export default {
     date: String
   },
   methods: {
-    like : function(PID) {
-      this.$store.commit("like",PID)
-      this.$vnode.key += 1
-      this.$vnode.key -= 1
-      //this.$forceUpdate()
+    like : function() {
+      this.$store.commit("like",this.PID)
     }
   }
 }
