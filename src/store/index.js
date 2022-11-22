@@ -33,6 +33,12 @@ export default createStore({
   mutations: {
     like (state, PID) {
       state.posts.get(PID).likes++
+    },
+    resetLikes (state) {
+      state.posts.values(post => {
+        post.likes = 0
+      }
+      )
     }
   },
   actions: {

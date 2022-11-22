@@ -1,8 +1,8 @@
 <template>
   <ul v-for="post in posts">
-    <Post v-bind="post" />
-    <form><input type="button" value="reset likes"></form>
+    <Post v-bind="post" :key="PID"/>
   </ul>
+  <form v-action="resetLikes"><input type="button" value="reset likes"></form>
 </template>
 
 <script>
@@ -20,6 +20,13 @@ export default {
   computed: {
     posts() {
       return this.$store.getters.getPosts
+    }
+  },
+  methods: {
+    resetLikes: function() {
+      this.$store.mutations.commit('resetLikes')
+      ref(0).value++
+      //this.$forceUpdate()
     }
   }
 }

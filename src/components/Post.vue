@@ -8,11 +8,13 @@
     <br>
     <p id="text">{{message}}</p>
     <p id="likes">{{likes}}</p>
-    <form><input type="button" value="Y"></form>
+    <form v-action="like,PID"><input type="button" value="Y"></form>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   name: 'Post',
   props: {
@@ -24,6 +26,13 @@ export default {
     image: String,
     likes: Number,
     date: String
+  },
+  methods: {
+    like : function(PID) {
+      this.$store.commit("like",PID)
+      ref(0).value++
+      //this.$forceUpdate()
+    }
   }
 }
 </script>
