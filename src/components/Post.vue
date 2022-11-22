@@ -30,7 +30,8 @@ export default {
   methods: {
     like : function(PID) {
       this.$store.commit("like",PID)
-      ref(0).value++
+      this.$vnode.key += 1
+      this.$vnode.key -= 1
       //this.$forceUpdate()
     }
   }
