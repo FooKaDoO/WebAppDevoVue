@@ -34,8 +34,7 @@ export default createStore({
           message: post.message,
           image: post.image,
           likes: post.likes,
-          date: post.date,
-          joe: state.users
+          date: post.date
         })
       }
       )
